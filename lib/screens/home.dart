@@ -1,4 +1,6 @@
 import 'package:age_calculator/constant/color.dart';
+import 'package:age_calculator/utils/helper_function.dart';
+import 'package:age_calculator/utils/utils.dart';
 import 'package:age_calculator/screens/result.dart';
 import 'package:age_calculator/widget/app_name.dart';
 import 'package:age_calculator/widget/custom_bottom_paint.dart';
@@ -64,15 +66,15 @@ class _HomePageState extends State<HomePage> {
             ),
             Spacer(),
             DatePickerField(
-              level: 'Select your date of birth',
-              onTap: (){},
-              hintText: "DD-MM-YYYY",
+              level: 'Select date of birth',
+              onTap: ()=> _selectDate(context, selectedBithDate, "BirthDate" ),
+              hintText: "${getFormatedDate(selectedBithDate)}",
             ),
             SizedBox(height: 10,),
             DatePickerField(
-              level: 'Select age at the date of',
-              onTap: (){},
-              hintText: "DD-MM-YYYY",
+              level: 'Select today\'s date',
+              onTap: ()=> _selectDate(context, selectedCurrentDate, "CurrentDate"),
+              hintText: "${getFormatedDate(selectedCurrentDate)}",
             ),
             Container(
               child: Stack(
@@ -102,5 +104,39 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  //This function used for open date picker 
+  Future<void> _selectDate(BuildContext context, DateTime initialDate, String from) async {
+    if(from == 'BirthDate') {
+       final DateTime? pickedBirthDate = await showDatePicker(
+        context: context,
+        initialDate: initialDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2101),
+      );
+      if (pickedBirthDate != null && pickedBirthDate != selectedBithDate)
+      setState(() {
+        selectedBithDate = pickedBirthDate;
+      });
+    } 
+    if(from == "CurrentDate"){
+      final DateTime? pickedCurrentDate = await showDatePicker(
+        context: context,
+        initialDate: initialDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime(2101),
+      );
+
+      if (pickedCurrentDate != null && pickedCurrentDate != selectedCurrentDate)
+      setState(() {
+        selectedCurrentDate = pickedCurrentDate;
+      });
+    }
+
+  }
 }
+
+
+
+
 
