@@ -1,7 +1,6 @@
+import 'package:age_calculator/constant/color.dart';
 import 'package:flutter/material.dart';
 
-
-//Copy this CustomPainter code to the Bottom of the File
 class CustomBottomPaint extends CustomPainter {
     @override
     void paint(Canvas canvas, Size size) {
@@ -16,7 +15,7 @@ class CustomBottomPaint extends CustomPainter {
 
     // ignore: non_constant_identifier_names
     Paint paint_0_fill = Paint()..style=PaintingStyle.fill;
-    paint_0_fill.color = Color(0xff90dce2).withOpacity(1.0);
+    paint_0_fill.color = primaryColor.withOpacity(1.0);
     canvas.drawPath(path_0,paint_0_fill);
 
     }
@@ -26,3 +25,4 @@ class CustomBottomPaint extends CustomPainter {
         return true;
     }
 }
+
