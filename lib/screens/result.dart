@@ -1,8 +1,13 @@
 
 
 import 'package:age_calculator/constant/color.dart';
+import 'package:age_calculator/widget/app_name.dart';
 import 'package:age_calculator/widget/custom_bottom_paint.dart';
+import 'package:age_calculator/widget/custom_divider.dart';
+import 'package:age_calculator/widget/custom_large_button.dart';
+import 'package:age_calculator/widget/custom_list_tile.dart';
 import 'package:age_calculator/widget/custom_top_paint.dart';
+import 'package:age_calculator/widget/summary_card_builder.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatefulWidget {
@@ -16,8 +21,7 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: non_constant_identifier_names
-    final double WIDTH = MediaQuery.of(context).size.width;
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
         child: Column(
@@ -27,64 +31,13 @@ class _ResultPageState extends State<ResultPage> {
               child: Stack(
                 children: [
                   CustomPaint(
-                    size: Size(WIDTH, (350*0.31473214285714285).toDouble()), 
+                    size: Size(width, (350*0.31473214285714285).toDouble()), 
                     painter: CustomTopPaint(),
                   ),
-                   Positioned(
+                  Positioned(
                     top: 30,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Container(
-                            alignment: Alignment.centerRight,
-                            padding: EdgeInsets.only(left: 20),
-                            child: Text("Age Calculator", 
-                              style: TextStyle(
-                              fontSize: 28, 
-                              fontWeight: FontWeight.w700, 
-                              fontFamily: 'roboto', 
-                              color: textColor,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: AppName(),
                   )
-                  // Positioned(
-                  //   top: 30,
-                  //   child: Container(
-                  //     padding: EdgeInsets.only(left: 10),
-                  //     child: Row(
-                  //       children: [
-                  //         InkWell(
-                  //           borderRadius: BorderRadius.circular(24),
-                  //           onTap: (){
-                  //             Navigator.pop(context);
-                  //           }, 
-                  //           child: Container(
-                  //             width: 48,
-                  //             height: 48,
-                  //             decoration: BoxDecoration(
-                  //               borderRadius: BorderRadius.circular(24)
-                  //             ),
-                  //             child: Icon(Icons.arrow_back_ios, color: textColor, ),
-                  //           ),
-                  //        ),
-                  //        Text("Age Calculator", 
-                  //         style: TextStyle(
-                  //           fontSize: 28, 
-                  //           fontWeight: FontWeight.w700,  
-                  //           fontFamily: 'roboto', 
-                  //           color: textColor,
-                  //          ),
-                  //         )
-                  //       ],
-                  //     ),
-                  //   ),
-                  // )
                 ],
               ),
             ),
@@ -93,43 +46,15 @@ class _ResultPageState extends State<ResultPage> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Date of birth", style: TextStyle(
-                          fontSize: 18,
-                          color: textColor,
-                          fontWeight: FontWeight.normal
-                        ),),
-                        Text("Jun 19, 1919",style: TextStyle(
-                          fontSize: 18,
-                          color: textColor,
-                          fontWeight: FontWeight.bold
-                        ),
-                      )
-                      ],
-                    ),
+                  CustomListTile(
+                    leading: "Date of birth",
+                    trailing: "19 Jun, 2019",
                   ),
                   SizedBox(height: 20,),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("Today", style: TextStyle(
-                          fontSize: 18,
-                          color: textColor,
-                          fontWeight: FontWeight.normal
-                        ),),
-                        Text("Jun 19, 1997",style: TextStyle(
-                          fontSize: 18,
-                          color: textColor,
-                          fontWeight: FontWeight.bold
-                        ),
-                      )
-                      ],
-                    ),
-                  )
+                  CustomListTile(
+                    leading: "Todays",
+                    trailing: "19 Jun, 2021",
+                  ),
                 ],
               )
             ),
@@ -168,12 +93,7 @@ class _ResultPageState extends State<ResultPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20),
-                    height: 100,
-                    color: textColor,
-                    width: 1,
-                  ),
+                  CustomDivider(),
                   Expanded(
                    child: Container(
                       child: Column(
@@ -269,38 +189,18 @@ class _ResultPageState extends State<ResultPage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 80),
                     child: CustomPaint(
-                      size: Size(WIDTH, (600*0.31473214285714285).toDouble()), 
+                      size: Size(width, (600*0.31473214285714285).toDouble()), 
                       painter: CustomBottomPaint(),
                     ),
                   ),
                   Positioned(
                     top: 80,
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      height: 56,
-                      width: MediaQuery.of(context).size.width,
-                      child: ElevatedButton(
-                        onPressed: (){
-                          Navigator.pop(context);
-                        }, 
-                        style: ButtonStyle(
-                          backgroundColor:  MaterialStateProperty.all<Color>(buttonColor),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(                  
-                              borderRadius: BorderRadius.circular(10.0),
-                            )
-                          )
-                        ),
-                        child: Text("Re-Calculate",
-                           style: TextStyle(
-                            fontSize: 24, 
-                            fontWeight: FontWeight.w500, 
-                            fontFamily: 'roboto', 
-                            color: Colors.white,
-                           ),
-                          ),
-                        ),
-                      ),
+                    child: CustomLargeButton(
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      buttonLevel: "Re-calculate",
+                    ),
                   ),
                 ],
               ),
@@ -312,24 +212,9 @@ class _ResultPageState extends State<ResultPage> {
   }
 }
 
-class SummaryCardBuilder extends StatelessWidget {
-  final String? title;
-  final String? subTitle;
-  final double? fontSize;
-  const SummaryCardBuilder({
-    Key? key, this.title, this.subTitle, this.fontSize
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Text("$title",style: TextStyle(color: textColor, fontSize: 16, fontWeight: FontWeight.w500, height: 1.5)),
-          Text("$subTitle",style: TextStyle(color: textColor, fontSize: fontSize ?? 20, fontWeight: FontWeight.bold, height: 1.5))
-        ],
-      ),
-    );
-  }
-} 
+
+
+
+
 
