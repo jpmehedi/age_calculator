@@ -22,7 +22,7 @@ class CustomLargeButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor:  MaterialStateProperty.all<Color>(buttonColor),
+          backgroundColor:  MaterialStateProperty.all<Color>(secondaryColor),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(                  
               borderRadius: BorderRadius.circular(10.0),
