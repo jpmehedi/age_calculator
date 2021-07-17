@@ -82,12 +82,12 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: const EdgeInsets.only(left: 80),
                     child: CustomPaint(
-                      size: Size(width, (600 * 0.31473214285714285).toDouble()), 
+                      size: Size(width, (399 * 0.31473214285714285).toDouble()), 
                       painter: CustomBottomPaint(),
                     ),
                   ),
                   Positioned(
-                    top: 80,
+                    top: 40,
                     child: CustomLargeButton(
                       buttonLevel: "Calculate",
                       onPressed: (){
