@@ -1,7 +1,7 @@
 import 'package:age_calculator/constant/color.dart';
-import 'package:age_calculator/utils/helper_function.dart';
-import 'package:age_calculator/utils/utils.dart';
-import 'package:age_calculator/screens/result.dart';
+import 'package:age_calculator/global/helper_function.dart';
+import 'package:age_calculator/global/utils.dart';
+import 'package:age_calculator/views/result.dart';
 import 'package:age_calculator/widget/app_name.dart';
 import 'package:age_calculator/widget/custom_bottom_paint.dart';
 import 'package:age_calculator/widget/custom_large_button.dart';

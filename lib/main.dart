@@ -1,4 +1,5 @@
-import 'package:age_calculator/screens/home.dart';
+
+import 'package:age_calculator/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
