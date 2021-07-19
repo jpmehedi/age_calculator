@@ -1,19 +1,7 @@
-import 'package:age_calculator/utils/utils.dart';
+import 'package:age_calculator/global/utils.dart';
+import 'package:age_calculator/model/model.dart';
 import 'package:intl/intl.dart';
 
-class DateDuration {
-  int days;
-  int months;
-  int years;
-
-  DateDuration({this.days = 0, this.months = 0, this.years = 0});
-
-  String toString() {
-    return 'Years: $years, Months: $months, Days: $days';
-  }
-}
-
-/// Age Class
 class AgeCalculator {
   /// _daysInMonth cost contains days per months; daysInMonth method to be used instead.
   static const List<int> _daysInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];

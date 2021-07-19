@@ -1,9 +1,9 @@
 
 
-import 'package:age_calculator/logic/age_calculator.dart';
 import 'package:age_calculator/constant/color.dart';
-import 'package:age_calculator/utils/helper_function.dart';
-import 'package:age_calculator/utils/utils.dart';
+import 'package:age_calculator/controller/age_calculator.dart';
+import 'package:age_calculator/global/helper_function.dart';
+import 'package:age_calculator/global/utils.dart';
 import 'package:age_calculator/widget/app_name.dart';
 import 'package:age_calculator/widget/custom_bottom_paint.dart';
 import 'package:age_calculator/widget/custom_divider.dart';
@@ -25,7 +25,6 @@ class _ResultPageState extends State<ResultPage> {
 
   @override
   Widget build(BuildContext context) {
-   print(selectedBithDate);
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Container(
