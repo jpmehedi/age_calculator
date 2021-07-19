@@ -7,7 +7,7 @@ import 'constant/color.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: Color(0xff90dce2),
+    statusBarColor: primaryColor,
     statusBarIconBrightness: Brightness.light,
     statusBarBrightness: Brightness.dark
   ));
