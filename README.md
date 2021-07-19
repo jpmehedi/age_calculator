@@ -1,16 +1,41 @@
-# age_calculator
+# Flutter 'Age Calculator Mobile Application'
 
-A new Flutter project.
+This is full functional Age Calculator Mobile Application, created by Mehedi Hasan [see more on](https://mehedihasaninfo.com/ "I am flutter developer")
 
-## Getting Started
+## Greating Start
 
-This project is a starting point for a Flutter application.
+ - Clone the repo
+ - Install the dependicies
+ - Run it
 
-A few resources to get you started if this is your first Flutter project:
+## Preview 
+This is Full Functional App
+| |
+|--------|
+|![age_calculator](https://user-images.githubusercontent.com/29401466/126200042-647364d0-1c1d-47e7-8bdf-e78bbbe59eb6.png)| 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Version History 
+|Version |Date | Comment|
+|--------|-----|--------|
+|1.0 | July 2021 | Initial release
+
+## Contributing
+Feel welcome and free to submit issues, pull requests and features to this repo.
+
+## Support me
+
+I really like to make as much (free) beautiful Flutter UI , I want to  your inspiresion !
+
+## Other Flutter Apps
+
+There are other example Apps made with flutter, see more on Interestinate.
+
+Or the following repo's:
+
+A Fitness  Flutter App: [Fitness App UI](https://github.com/flutterbangladesh/fitness-app-flutter)
+A eDaktar App Flutter : [eDaktar App UI](https://github.com/jpmehedi/edaktar_app_flutter)
+A Furniture App Flutter : [Furniture App UI](https://github.com/jpmehedi/furniture-app-flutter)
+
+
